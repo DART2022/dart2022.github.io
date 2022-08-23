@@ -294,17 +294,46 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h3>
-                            DARTset (Working in progress, please wait).
+                            DARTset
                         </h3>
 
                         <h4>
-                            <div class="text-center"> Stand-alone document
+                            Dataset Organization
+                            <ul>
+                                <li><b>Rendered Image</b>: with background (<font color="red">384x384</font>), without
+                                    background RGBA (<font color="red">512x512</font>).
+                                <li><b>Annotation</b>: 2D/3D positions for 21 keypoints of the hand, MANO pose, vertex
+                                    locations.
+                            </ul>
+                            <p><code class="language-plaintext highlighter-rouge">DARTset</code> is composed of
+                                <b>train</b> and <b>test</b>. The folder of each is described as
+                                below.
+                            </p>
+                            <div class="language-plaintext highlighter-rouge">
+                                <div class="highlight text-left">
+                                    <pre class="highlight"><code>Train set
+* Train: 729,189 single hand frames, 25% of which are wearing accessories.
+
+Test set
+* Test (H): 288,77 single hand frames, 25% of which are wearing accessories.
+
+Total set
+* DARTset: 758,066 single hand frames. Noteworthy here, we conduct experiments on full 800K DARTset and filter out ~42,000 of images which left wrist unsealed on the final version.
+                                </code></pre>
+                                </div>
                             </div>
+                            <p><code class="language-plaintext highlighter-rouge">Pose sampling</code> we use spherical
+                                linear interpolation (Slerp) in pose and root rotation sampling. Among these hands, ~25%
+                                are assigned an accessory. In DARTset, basic UV map (skin tones, scars, moles,
+                                tattoos) and accessories are all uniformly sampled, the number of their corresponding
+                                renders are roughly equal.
+                            </p>
                         </h4>
                         <h4>
-                            <div class="text-center"> DARTset link
-                            </div>
+                            Download (<b>Coming soon</b>)
                         </h4>
+
+
                     </div>
                 </div>
 

@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html>
+  <head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<head lang="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <title>DART</title>
 
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:image" content="https://dorverbin.github.io/refnerf/img/refnerf_titlecard.jpg">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dorverbin.github.io/refnerf">
-    <meta property="og:title" content="Ref-NeRF: Structured View-Dependent Appearance for Neural Radiance Fields">
-    <meta property="og:description"
-        content="Neural Radiance Fields (NeRF) is a popular view synthesis technique that represents a scene as a continuous volumetric function, parameterized by multilayer perceptrons that provide the volume density and view-dependent emitted radiance at each location. While NeRF-based techniques excel at representing fine geometric structures with smoothly varying view-dependent appearance, they often fail to accurately capture and reproduce the appearance of glossy surfaces. We address this limitation by introducing Ref-NeRF, which replaces NeRF's parameterization of view-dependent outgoing radiance with a representation of reflected radiance and structures this function using a collection of spatially-varying scene properties. We show that together with a regularizer on normal vectors, our model significantly improves the realism and accuracy of specular reflections. Furthermore, we show that our model's internal representation of outgoing radiance is interpretable and useful for scene editing.">
+    <meta
+      property="og:image"
+      content="https://dorverbin.github.io/refnerf/img/refnerf_titlecard.jpg"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dorverbin.github.io/refnerf" />
+    <meta
+      property="og:title"
+      content="Ref-NeRF: Structured View-Dependent Appearance for Neural Radiance Fields"
+    />
+    <meta
+      property="og:description"
+      content="Neural Radiance Fields (NeRF) is a popular view synthesis technique that represents a scene as a continuous volumetric function, parameterized by multilayer perceptrons that provide the volume density and view-dependent emitted radiance at each location. While NeRF-based techniques excel at representing fine geometric structures with smoothly varying view-dependent appearance, they often fail to accurately capture and reproduce the appearance of glossy surfaces. We address this limitation by introducing Ref-NeRF, which replaces NeRF's parameterization of view-dependent outgoing radiance with a representation of reflected radiance and structures this function using a collection of spatially-varying scene properties. We show that together with a regularizer on normal vectors, our model significantly improves the realism and accuracy of specular reflections. Furthermore, we show that our model's internal representation of outgoing radiance is interpretable and useful for scene editing."
+    />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ref-NeRF: Structured View-Dependent Appearance for Neural Radiance Fields">
-    <meta name="twitter:description"
-        content="Neural Radiance Fields (NeRF) is a popular view synthesis technique that represents a scene as a continuous volumetric function, parameterized by multilayer perceptrons that provide the volume density and view-dependent emitted radiance at each location. While NeRF-based techniques excel at representing fine geometric structures with smoothly varying view-dependent appearance, they often fail to accurately capture and reproduce the appearance of glossy surfaces. We address this limitation by introducing Ref-NeRF, which replaces NeRF's parameterization of view-dependent outgoing radiance with a representation of reflected radiance and structures this function using a collection of spatially-varying scene properties. We show that together with a regularizer on normal vectors, our model significantly improves the realism and accuracy of specular reflections. Furthermore, we show that our model's internal representation of outgoing radiance is interpretable and useful for scene editing.">
-    <meta name="twitter:image" content="https://dorverbin.github.io/refnerf/img/refnerf_titlecard.jpg">
-
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ref-NeRF: Structured View-Dependent Appearance for Neural Radiance Fields"
+    />
+    <meta
+      name="twitter:description"
+      content="Neural Radiance Fields (NeRF) is a popular view synthesis technique that represents a scene as a continuous volumetric function, parameterized by multilayer perceptrons that provide the volume density and view-dependent emitted radiance at each location. While NeRF-based techniques excel at representing fine geometric structures with smoothly varying view-dependent appearance, they often fail to accurately capture and reproduce the appearance of glossy surfaces. We address this limitation by introducing Ref-NeRF, which replaces NeRF's parameterization of view-dependent outgoing radiance with a representation of reflected radiance and structures this function using a collection of spatially-varying scene properties. We show that together with a regularizer on normal vectors, our model significantly improves the realism and accuracy of specular reflections. Furthermore, we show that our model's internal representation of outgoing radiance is interpretable and useful for scene editing."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dorverbin.github.io/refnerf/img/refnerf_titlecard.jpg"
+    />
 
     <!-- mirror: F0%9F%AA%9E&lt -->
-    <link rel="icon"
-        href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%E2%9C%A8&lt;/text&gt;&lt;/svg&gt;">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/codemirror.min.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%E2%9C%A8&lt;/text&gt;&lt;/svg&gt;"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/codemirror.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -42,278 +58,300 @@
     <script src="js/clipboard.min.js"></script>
     <script src="js/video_comparison.js"></script>
     <script src="js/app.js"></script>
-</head>
+  </head>
 
-<body>
-    <div class="container" id="header" style="text-align: center; margin: auto;">
-        <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
-            <h2 class="col-md-12 text-center" id="title">
-                <b>DART</b>: Articulated Hand Model with <br> Diverse Accessories and Rich Textures<br>
-                <small>
-                    Neurips 2022 dataset & benchmark track (under review)
-                </small>
-            </h2>
+  <body>
+    <div class="container" id="header" style="text-align: center; margin: auto">
+      <div
+        class="row"
+        id="title-row"
+        style="max-width: 100%; margin: 0 auto; display: inline-block"
+      >
+        <h2 class="col-md-12 text-center" id="title">
+          <b>DART</b>: Articulated Hand Model with <br />
+          <b>D</b>iverse <b>A</b>ccessories and <b>R</b>ich
+          <b>T</b>extures<br />
+          <small> Neurips 2022 dataset & benchmark track (under review) </small>
+          <br>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+          <ul class="nav nav-pills nav-justified author">
+            <li>
+              <a
+                style="text-decoration: none;"
+                href="https://github.com/tomguluson92"
+                >Daiheng Gao <sup>*</sup></a
+              > <br />Alibaba XR Lab<br />
+            </li>
+            <li>
+              <a style="text-decoration: none" href="https://xiuyuliang.cn/"
+                >Yuliang Xiu <sup>*</sup></a
+              > <br />MPI-IS<br />
+            </li>
+            <li>
+              <a style="text-decoration: none" href="https://kailinli.top/#">
+                Kailin Li <sup>*</sup></a
+              > <br />SJTU MVIG
+            </li>
+            <li>
+              <a style="text-decoration: none" href="https://lixiny.github.io/">
+                Lixin Yang <sup>*</sup></a
+              > <br />SJTU MVIG
+            </li>
+            <br>
+            <li>
+              <a style="text-decoration: none"> Feng Wang </a>
+              <br />Alibaba XR Lab
+            </li>
+            <li>
+              <a style="text-decoration: none"> Peng Zhang </a>
+              <br />Alibaba XR Lab
+            </li>
+            <li>
+              <a style="text-decoration: none"> Bang Zhang </a>
+              <br />Alibaba XR Lab
+            </li>
+            <li>
+              <a style="text-decoration: none" href="https://www.mvig.org/">
+                Cewu Lu
+              </a>
+              <br />SJTU MVIG
+            </li>
+            <li>
+              <a
+                style="text-decoration: none"
+                href="https://www.cs.sfu.ca/~pingtan/"
+              >
+                Ping Tan
+              </a>
+              <br />Simon Fraser University
+            </li>
+          </ul>
         </div>
-        <div class="row" id="author-row" style="margin:0 auto;">
-            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
-                <table class="author-table" id="author-table">
-                    <tr>
-                        <td>
-                            <a style="text-decoration:none" href="https://github.com/tomguluson92">Daiheng Gao
-                            </a>
-                            <br>Alibaba XR Lab<br>
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" href="https://xiuyuliang.cn/">Yuliang Xiu
-                            </a>
-                            <br>Max Planck Institute for Intelligent Systems<br>
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" href="https://kailinli.top/#">
-                                Kailin Li
-                            </a>
-                            <br>SJTU MVIG
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a style="text-decoration:none" href="https://lixiny.github.io/">
-                                Lixin Yang
-                            </a>
-                            <br>SJTU MVIG
-                        </td>
-                        <td>
-                            <a style="text-decoration:none">
-                                Feng Wang
-                            </a>
-                            <br>Alibaba XR Lab
-                        </td>
-                        <td>
-                            <a style="text-decoration:none">
-                                Peng Zhang
-                            </a>
-                            <br>Alibaba XR Lab
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a style="text-decoration:none">
-                                Bang Zhang
-                            </a>
-                            <br>Alibaba XR Lab
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" href="https://www.mvig.org/">
-                                Cewu Lu
-                            </a>
-                            <br>SJTU MVIG
-                        </td>
-                        <td>
-                            <a style="text-decoration:none" href="https://www.cs.sfu.ca/~pingtan/">
-                                Ping Tan
-                            </a>
-                            <br>Simon Fraser University
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <br /><br>
     <script>
-        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
+      document.getElementById("author-row").style.maxWidth =
+        document.getElementById("title-row").clientWidth + "px";
     </script>
     <div class="container" id="main">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+          <ul class="nav nav-pills nav-justified">
+            <li>
+              <a href="https://openreview.net/forum?id=FPgCB_Z_0O">
+                <img src="./img/paper_image.jpg" height="60px" />
+                <h4><strong>Paper</strong></h4></a
+              >
+            </li>
+            <li>
+              <a href="https://youtube.com/embed/VvlUYe-9b7U">
+                <img src="./img/youtube_icon.png" height="60px" />
+                <h4><strong>Video</strong></h4></a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/DART2022/DARTset" target="_blank">
+                <img src="img/github.png" height="60px" />
+                <h4><strong>Dataloader</strong></h4></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.dropbox.com/sh/vugu0230u7767mw/AAA_D0qFZBN4F2wWyTRZyyDXa?dl=0"
+                target="_blank"
+              >
+                <img src="img/database_icon.png" height="60px" />
+                <h4><strong>DARTset</strong></h4></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1iqymPPPSF_rlKbHRvvgaVHlcmPsoEx25/view?usp=sharing"
+                target="_blank"
+              >
+                <img src="img/unity.png" height="60px" />
+                <h4><strong>Unity GUI & Code</strong></h4></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h3>Abstract</h3>
+          <div class="text-justify">
+            Hand, the bearer of human productivity and intelligence, is
+            receiving much attention due to the recent fever of 3D digital
+            avatars. Among different hand morphable models, MANO has been widely
+            used in various vision & graphics tasks. However, MANO disregards
+            textures and accessories, which largely limits its power to
+            synthesize photorealistic & lifestyle hand data. In this paper, we
+            extend MANO with more Diverse Accessories and Rich Textures, namely
+            <b>DART</b>. <b>DART</b> is comprised of 325 exquisite hand-crafted
+            texture maps which varies in appearance, and covers different kinds
+            of blemishes, make-ups and accessories. We also provide the Unity
+            GUI which allows people to render hands with user-specific settings,
+            e.g pose, camera, background, lighting, and <b>DART</b>'s textures.
+            In this way, we generate large-scale (800K), diverse, and
+            high-fidelity hand images, paired with perfect-aligned 3D labels,
+            called <b>DARTset</b>. Experiments demonstrate its superiority in
+            generalization and diversity. As a great complement for existing
+            datasets, <b>DARTset</b> could boost hand pose estimation & surface
+            reconstruction tasks. <b>DART</b> and Unity software is publicly
+            available for research purpose.<br /><br /><br />
+          </div>
+        </div>
+        <img
+          src="img/teaser.png"
+          class="img-responsive"
+          alt="overview"
+          width="64%"
+          style="max-height: 450px; margin: 30px auto"
+        />
+
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 text-center">
-                <ul class="nav nav-pills nav-justified">
-                    <li>
-                        <a href="https://openreview.net/forum?id=FPgCB_Z_0O">
-                            <img src="./img/paper_image.jpg" height="60px">
-                            <h4><strong>Paper</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com/embed/VvlUYe-9b7U">
-                            <img src="./img/youtube_icon.png" height="60px">
-                            <h4><strong>Video</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/DART2022/DARTset" target="_blank">
-                            <image src="img/github.png" height="60px">
-                                <h4><strong>DARTset toolkit</strong></h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://drive.google.com/file/d/1iqymPPPSF_rlKbHRvvgaVHlcmPsoEx25/view?usp=sharing"
-                            target="_blank">
-                            <image src="img/google-drive.png" height="60px">
-                                <h4><strong>DART GUI & Code</strong></h4>
-                        </a>
-                    </li>
-                </ul>
+          <div class="col-md-8 col-md-offset-2">
+            <h3>Video</h3>
+            <div class="text-center">
+              <div style="position: relative; padding-top: 56.25%">
+                <iframe
+                  src="https://youtube.com/embed/VvlUYe-9b7U"
+                  title="[Neurips 2022] DART demo"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  "
+                ></iframe>
+              </div>
             </div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h3>Comparison between DART and MANO basic topology.</h3>
+            <div class="text-justify">
+              In DART, we remould the standard template hand mesh of MANO, which
+              has 778 vertices and 1,538 faces, to a wrist-enhanced template
+              mesh of 842 vertices and 1,666 faces. The pose parameter that
+              drive the template hand mesh in MANO can be used as a direct
+              placement for DART without any modifications.
+              <br /><br />
+            </div>
+            <div class="text-center">
+              <img src="./img/dart_vs_mano.png" width="50%" />
+            </div>
+          </div>
         </div>
 
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h3>How to use DART tool in generating your own data?</h3>
 
+            <h4>
+              Step1: click
+              <a
+                href="https://drive.google.com/file/d/1iqymPPPSF_rlKbHRvvgaVHlcmPsoEx25/view?usp=sharing"
+                >DART GUI & Code</a
+              >
+              and download <font color="red">Build_Hand.zip</font>.
+            </h4>
 
-        <!--        <div class="row">-->
-        <!--            <div class="col-md-8 col-md-offset-2">-->
-        <!--                <div class="video-compare-container" id="materialsDiv">-->
-        <!--                    <video class="video" id="materials" loop playsinline autoPlay muted src="video/materials_circle_mipnerf_ours.mp4" onplay="resizeAndPlay(this)"></video>-->
-        <!--                    -->
-        <!--                    <canvas height=0 class="videoMerge" id="materialsMerge"></canvas>-->
-        <!--                </div>-->
-        <!--			</div>-->
-        <!--        </div>-->
-        <image src="img/teaser1.jpg" class="img-responsive" alt="overview" width="60%"
-            style="max-height: 450px;margin:auto;">
+            <h4>
+              Step2: Pose Editing: allow arbitrarily, illumination, accessory,
+              skin color and other terms.
+              <div class="text-center">
+                <img src="./img/gui/step1.jpg" width="49%" />
+                <img src="./img/gui/step2.jpg" width="49%" />
+              </div>
+              <br />
+              <td align="left" valign="top" width="50%">
+                <video id="v2" width="100%" playsinline autoplay loop muted>
+                  <source src="video/step2.mp4" type="video/mp4" />
+                </video>
+              </td>
+            </h4>
 
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h3>
-                        Abstract
-                    </h3>
-                    <div class="text-justify">
-                        Hand, the bearer of human productivity and intelligence, is receiving much attention due to the
-                        recent fever of 3D digital avatars. Among different hand morphable models, MANO has been widely
-                        used in various vision & graphics tasks. However, MANO disregards textures and accessories,
-                        which largely limits its power to synthesize photorealistic & lifestyle hand data. In this
-                        paper, we extend MANO with more Diverse Accessories and Rich Textures, namely <b>DART</b>.
-                        <b>DART</b> is comprised of 325 exquisite hand-crafted texture maps which varies in appearance,
-                        and covers different kinds of blemishes, make-ups and accessories. We also provide the Unity GUI
-                        which allows people to render hands with user-specific settings, e.g pose, camera, background,
-                        lighting, and <b>DART</b>'s textures. In this way, we generate large-scale (800K), diverse, and
-                        high-fidelity hand images, paired with perfect-aligned 3D labels, called <b>DARTset</b>.
-                        Experiments demonstrate its superiority in generalization and diversity. As a great complement
-                        for existing datasets, <b>DARTset</b> could boost hand pose estimation & surface reconstruction
-                        tasks. <b>DART</b> and Unity software is publicly available for research purpose. </p>
-                    </div>
-                </div>
+            <h4>
+              Step3: Exporting: rendered image with GT(mano pose, 2d/3d joint
+              are put into the <font color="brown">output.pkl</font>)
 
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3>
-                            Video
-                        </h3>
-                        <div class="text-center">
-                            <div style="position:relative;padding-top:56.25%;">
-                                <iframe src="https://youtube.com/embed/VvlUYe-9b7U" title="[Neurips 2022] DART demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                                    style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
+              <td align="center" valign="top" width="50%">
+                <img
+                  style="vertical-align: top"
+                  src="./img/gui/step3.jpg"
+                  width="50%"
+                />
+                <video
+                  style="vertical-align: bottom"
+                  id="v3"
+                  width="45%"
+                  playsinline
+                  autoplay
+                  loop
+                  muted
+                >
+                  <source src="video/step3.mp4" type="video/mp4" />
+                </video>
+              </td>
+            </h4>
+          </div>
+        </div>
 
-                <!--        <div class="row">-->
-                <!--            <div class="col-md-8 col-md-offset-2">-->
-                <!--                <h3>-->
-                <!--                    Reflection Direction Parameterization-->
-                <!--                </h3>-->
-                <!--                <div class="text-justify">-->
-                <!--                    Previous approaches directly input the camera's view direction into the MLP to predict outgoing radiance. We show that instead using the reflection of the view direction about the normal makes the emittance function significantly easier to learn and interpolate, greatly improving our results.-->
-                <!--                    -->
-                <!--                    <br><br>-->
-                <!--                    -->
-                <!--                </div>-->
-                <!--                <div class="text-center">-->
-                <!--                    <video id="refdir" width="40%" playsinline autoplay loop muted>-->
-                <!--                        <source src="video/reflection_animation.mp4" type="video/mp4" />-->
-                <!--                    </video>-->
-                <!--                </div>-->
-                <!--            </div>-->
-                <!--        </div>-->
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h3>DARTset Datasheet & Explanation</h3>
 
+            <h4>
+              Dataset Structure
+              <ul>
+                <li>
+                  <b>Rendered Image</b>: with background (<font color="red"
+                    >384x384</font
+                  >), without background RGBA (<font color="red">512x512</font
+                  >).
+                </li>
 
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3>
-                            Comparison between DART and MANO basic topology.
-                        </h3>
-                        <div class="text-justify">
-                            In DART, we remould the standard template hand mesh of MANO, which has 778 vertices and
-                            1,538 faces, to a wrist-enhanced template mesh of
-                            842 vertices and 1,666 faces. The pose parameter <img src="./img/dart_eq1.jpg" width="25%">
-                            that drive the template hand mesh in MANO can be used as a direct placement for DART without
-                            any modifications.
-                            <br><br>
-                        </div>
-                        <div class="text-center">
-                            <img src="./img/dart_vs_mano.png" width="50%">
-                        </div>
-                    </div>
-                </div>
+                <li>
+                  <b>Annotation</b>: 2D/3D positions for 21 keypoints of the
+                  hand, MANO pose, vertex locations.
+                </li>
 
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3>
-                            How to use DART tool in generating your own data?
-                        </h3>
-
-                        <h4>
-                            Step1: click <a
-                                href="https://drive.google.com/file/d/1iqymPPPSF_rlKbHRvvgaVHlcmPsoEx25/view?usp=sharing">DART
-                                GUI & Code</a> and download <font color="red">Build_Hand.zip</font>.
-                            <div class="text-center">
-                                <img src="./img/gui/step1.jpg" width="50%">
-                            </div>
-                        </h4>
-
-                        <h4>
-                            Step2: Pose Editing: allow arbitrarily, illumination, accessory, skin color and other terms.
-                            <div class="text-center">
-                                <img src="./img/gui/step2.jpg" width="50%">
-                            </div>
-                            <td align="left" valign="top" width="50%">
-                                <video id="v2" width="100%" playsinline autoplay loop muted>
-                                    <source src="video/step2.mp4" type="video/mp4" />
-                                </video>
-                            </td>
-                        </h4>
-
-                        <h4>
-                            Step3: Exporting: rendered image with GT(mano pose, 2d/3d joint are put into the <font
-                                color="brown">output.pkl</font>)
-                            <div class="text-center">
-                                <img src="./img/gui/step3.jpg" width="50%">
-                            </div>
-                            <td align="left" valign="top" width="50%">
-                                <video id="v3" width="100%" playsinline autoplay loop muted>
-                                    <source src="video/step3.mp4" type="video/mp4" />
-                                </video>
-                            </td>
-                        </h4>
-                        <!--                <div class="video-compare-container" style="width: 100%">-->
-                        <!--                    <video class="video" id="toycar" loop playsinline autoPlay muted src="video/toycar.mp4" onplay="resizeAndPlay(this)"></video>-->
-                        <!--                    <canvas height=0 class="videoMerge" id="toycarMerge"></canvas>-->
-                        <!--                </div>-->
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3>
-                            DARTset Datasheet & Explanation
-                        </h3>
-
-                        <h4>
-                            Dataset Structure
-                            <ul>
-                                <li><b>Rendered Image</b>: with background (<font color="red">384x384</font>), without
-                                    background RGBA (<font color="red">512x512</font>).
-                                <li><b>Annotation</b>: 2D/3D positions for 21 keypoints of the hand, MANO pose, vertex
-                                    locations.
-                                <li><b>Visualization & Code</b>: Please check <a>https://github.com/DART2022/DARTset</a></li>
-                            </ul>
-                            <p><code class="language-plaintext highlighter-rouge">DARTset</code> is composed of
-                                <b>train</b> and <b>test</b>. The folder of each is described as
-                                below.
-                            </p>
-                            <div class="language-plaintext highlighter-rouge">
-                                <div class="highlight text-left">
-                                    <pre class="highlight"><code>Train set
+                <li>
+                  <b>Visualization & Code</b>:
+                  <a>https://github.com/DART2022/DARTset</a>
+                </li>
+                <li>
+                  <b>DARTset Download</b>:
+                  <a
+                    href="https://www.dropbox.com/sh/vugu0230u7767mw/AAA_D0qFZBN4F2wWyTRZyyDXa?dl=0"
+                    target="_blank"
+                    >Dropbox link (Train & Test)</a
+                  >
+                </li>
+              </ul>
+              <p>
+                <code class="language-plaintext highlighter-rouge"
+                  >DARTset</code
+                >
+                is composed of <b>train</b> and <b>test</b>. The folder of each
+                is described as below.
+              </p>
+              <div class="language-plaintext highlighter-rouge">
+                <div class="highlight text-left">
+                  <pre class="highlight"><code>Train set
 * Train: 729,189 single hand frames, 25% of which are wearing accessories.
 
 Test set
@@ -322,137 +360,116 @@ Test set
 Total set
 * DARTset: 758,066 single hand frames. Noteworthy here, we conduct experiments on full 800K DARTset and filter out ~42,000 of images which left wrist unsealed on the final version.
                                 </code></pre>
-                                </div>
-                            </div>
-                            <p><code class="language-plaintext highlighter-rouge">Pose sampling</code> we use spherical
-                                linear interpolation (Slerp) in pose and root rotation sampling. Among these hands, ~25%
-                                are assigned an accessory. In DARTset, basic UV map (skin tones, scars, moles,
-                                tattoos) and accessories are all uniformly sampled, the number of their corresponding
-                                renders are roughly equal.
-                            </p>
-                        </h4>
-
-                        <h4>
-                            Dataset Creation
-
-                            <p class="text-justify">Texture map (4096 x 4096) are all created manually by 3D artists. GUI and batch data generator is programmed by DART's authors.</p>
-                            <ul>
-                                <li><b>(a) Pose Sampling</b>: In DART, we totally sampled 800K pose, 758K of them are valid. For each pose, we adopt synthetic pose <b>θs</b> from A-MANO and randomply picked 2,000 pose from FreiHand <b>θr</b>, through calculate the difference between <b>θs</b> and <b>θr</b>, we select the one <b>θr_max</b>
-                                that differs most from <b>θs</b>. Then we interpolate 8 rotations from <b>θr_max</b> to <b>θs</b> by spherical linear interpolation (Slerp). For more detail, please check the paper.
-                                <li><b>(b) Mesh Reconstruction & Rendering</b>: After part (a), we have <font color="blue">N x (16,3)</font> MANO poses (N=758K). We input those poses into our revised MANO layer directly. Through which we can easily get DART mesh (MANO mesh plus extra wrist) with 842 vertices and 1,666 faces.
-                                <li><b>(c) Rendering</b>: We adopt <font color="blue">Unity</font> and our revised <font color="red">SSS skin shader</font> for rendering. During the rendering pipeline, we randomly select the illumination (intensity, color and position), texture (including accessory). After rendering, we have the final image and 2D reprojected landmarks.</li>
-                                <li><b>(d) Ground Truth Data</b>: At part (a) and (b), we already gather all 3D related ground truth for monocular 3D pose estimation & hand tracking yet leave 2D landmark untouched. After the rendering process (part (c)), we obtain the 2D landmark and inject it to the ground truth data file.
-                                Since our method in creating DARTset is build on top of the ground truth annotations, so the ground truth annotations are born with renderings.</li>
-                            </ul>
-                        </h4>
-
-                        <h4>
-                            Considerations for Using the Data
-                            <ul>
-                                <li><b>Social Impact</b>: No ethical issues because DART do not involve any human biological information.</li>
-                                <li><b>Gender Biases</b>: Since our basic mesh topology is FIXED (we focus more on pose rather than shape), which means the mesh itself is gender-agnostic. In our data generation pipeline, both texture maps and accessories in DARTset are randomly sampled.
-                                Considering this, we do not think it may involve extreme gender bias in DARTset.</li>
-                            </ul>
-                        </h4>
-
-                         <h4>
-                            Additional Information
-                            <ul>
-                                <li><b>Dataset Curator</b>: <a>Daiheng Gao, daiheng.gdh@alibaba-inc.com</a></li>
-                                <li><b>Licensing Information</b>: Codes are MIT license. GUI(Unity) tools are CC BY-NC 4.0 license. Dataset is CC BY-NC-ND 4.0 license.</li>
-                            </ul>
-                        </h4>
-
-                        <h4>
-                            Download: <a
-                                href="https://www.dropbox.com/sh/vugu0230u7767mw/AAA_D0qFZBN4F2wWyTRZyyDXa?dl=0"
-                                target="_blank">Dropbox link (Train & Test)</a>
-                        </h4>
-                        <h4>
-                            Toolkit
-                            <p>For data visualization and usage, please refer to <a
-                                    href="https://github.com/DART2022/DARTset" target="_blank">DARTset toolkit</a>.</p>
-                        </h4>
-
-
-
-                    </div>
                 </div>
+              </div>
+              <p>
+                <code class="language-plaintext highlighter-rouge"
+                  >Pose sampling</code
+                >
+                we use spherical linear interpolation (Slerp) in pose and root
+                rotation sampling. Among these hands, ~25% are assigned an
+                accessory. In DARTset, basic UV map (skin tones, scars, moles,
+                tattoos) and accessories are all uniformly sampled, the number
+                of their corresponding renders are roughly equal.
+              </p>
+            </h4>
 
-                <!--        <div class="row">-->
-                <!--            <div class="col-md-8 col-md-offset-2">-->
-                <!--                <h3>-->
-                <!--                    Scene Editing-->
-                <!--                </h3>-->
-                <!--                <div class="text-justify">-->
-                <!--                    We show that our structured representation of the directional MLP allows for scene editing after training. Here we show that we can convincingly change material properties.-->
-                <!--                    <br>-->
-                <!--                    We can increase and decrease material roughness:-->
-                <!--                </div>-->
+            <h4>
+              Dataset Creation
 
-                <!--                <div style="overflow: hidden;">-->
-                <!--                    <video id="editing-materials" width="100%" playsinline autoplay loop muted style="margin-top: -5%;">-->
-                <!--                        <source src="video/materials_rougher_smoother.mp4" type="video/mp4" />-->
-                <!--                    </video>-->
-                <!--                </div>-->
+              <p class="text-justify">
+                Texture map (4096 x 4096) are all created manually by 3D
+                artists. GUI and batch data generator is programmed by DART's
+                authors.
+              </p>
+              <ul>
+                <li>
+                  <b>(a) Pose Sampling</b>: In DART, we totally sampled 800K
+                  pose, 758K of them are valid. For each pose, we adopt
+                  synthetic pose <b>θs</b> from A-MANO and randomply picked
+                  2,000 pose from FreiHand <b>θr</b>, through calculate the
+                  difference between <b>θs</b> and <b>θr</b>, we select the one
+                  <b>θr_max</b> that differs most from <b>θs</b>. Then we
+                  interpolate 8 rotations from <b>θr_max</b> to <b>θs</b> by
+                  spherical linear interpolation (Slerp). For more detail,
+                  please check the paper.
+                </li>
 
-                <!--                <div class="text-justify">-->
-                <!--                    We can also control the amounts of specular and diffuse colors, or change the diffuse color without affecting the specular reflections:-->
-                <!--                </div>-->
-                <!--                -->
-                <!--                <table width="100%">-->
-                <!--                    <tr>-->
-                <!--                        <td align="left" valign="top" width="50%">-->
-                <!--                            <video id="v2" width="100%" playsinline autoplay loop muted>-->
-                <!--                                <source src="video/car_color2.mp4" type="video/mp4" />-->
-                <!--                            </video>-->
-                <!--                        </td>-->
-                <!--                        <td align="left" valign="top" width="50%">-->
-                <!--                            <video id="v3" width="100%" playsinline autoplay loop muted>-->
-                <!--                                <source src="video/car_color3.mp4" type="video/mp4" />-->
-                <!--                            </video>-->
-                <!--                        </td>-->
-                <!--                    </tr>-->
-                <!--                </table>-->
+                <li>
+                  <b>(b) Mesh Reconstruction & Rendering</b>: After part (a), we
+                  have <font color="blue">N x (16,3)</font> MANO poses (N=758K).
+                  We input those poses into our revised MANO layer directly.
+                  Through which we can easily get DART mesh (MANO mesh plus
+                  extra wrist) with 842 vertices and 1,666 faces.
+                </li>
+                <li>
+                  <b>(c) Rendering</b>: We adopt
+                  <font color="blue">Unity</font> and our revised
+                  <font color="red">SSS skin shader</font> for rendering. During
+                  the rendering pipeline, we randomly select the illumination
+                  (intensity, color and position), texture (including
+                  accessory). After rendering, we have the final image and 2D
+                  reprojected landmarks.
+                </li>
+                <li>
+                  <b>(d) Ground Truth Data</b>: At part (a) and (b), we already
+                  gather all 3D related ground truth for monocular 3D pose
+                  estimation & hand tracking yet leave 2D landmark untouched.
+                  After the rendering process (part (c)), we obtain the 2D
+                  landmark and inject it to the ground truth data file. Since
+                  our method in creating DARTset is build on top of the ground
+                  truth annotations, so the ground truth annotations are born
+                  with renderings.
+                </li>
+              </ul>
+            </h4>
 
-                <!--            </div>-->
-                <!--        </div>-->
+            <h4>
+              Considerations for Using the Data
+              <ul>
+                <li>
+                  <b>Social Impact</b>: No ethical issues because DART do not
+                  involve any human biological information.
+                </li>
+                <li>
+                  <b>Gender Biases</b>: Since our basic mesh topology is FIXED
+                  (we focus more on pose rather than shape), which means the
+                  mesh itself is gender-agnostic. In our data generation
+                  pipeline, both texture maps and accessories in DARTset are
+                  randomly sampled. Considering this, we do not think it may
+                  involve extreme gender bias in DARTset.
+                </li>
+              </ul>
+            </h4>
 
+            <h4>
+              Additional Information
+              <ul>
+                <li>
+                  <b>Dataset Curator</b>:
+                  <a>Daiheng Gao, daiheng.gdh@alibaba-inc.com</a>
+                </li>
+                <li>
+                  <b>Licensing Information</b>: Codes are MIT license.
+                  GUI(Unity) tools are CC BY-NC 4.0 license. Dataset is CC
+                  BY-NC-ND 4.0 license.
+                </li>
+              </ul>
+            </h4>
+          </div>
+        </div>
 
-                <!--        <div class="row">-->
-                <!--            <div class="col-md-8 col-md-offset-2">-->
-                <!--                <h3>-->
-                <!--                    Citation-->
-                <!--                </h3>-->
-                <!--                <div class="form-group col-md-10 col-md-offset-1">-->
-                <!--                    <textarea id="bibtex" class="form-control" readonly>-->
-                <!--@article{verbin2021refnerf,-->
-                <!--    title={{Ref-NeRF}: Structured View-Dependent Appearance for-->
-                <!--           Neural Radiance Fields},-->
-                <!--    author={Dor Verbin and Peter Hedman and Ben Mildenhall and-->
-                <!--            Todd Zickler and Jonathan T. Barron and Pratul P. Srinivasan},-->
-                <!--    journal={CVPR},-->
-                <!--    year={2022}-->
-                <!--}</textarea>-->
-                <!--                </div>-->
-                <!--            </div>-->
-                <!--        </div>-->
-
-
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3>
-                            Acknowledgements
-                        </h3>
-                        <p class="text-justify">
-                            <br>
-                            The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
-</body>
-
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h3>Acknowledgements</h3>
+            <p class="text-justify">
+              <br />
+              The website template was borrowed from
+              <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

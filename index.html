@@ -295,16 +295,17 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h3>
-                            DARTset
+                            DARTset Datasheet & Explanation
                         </h3>
 
                         <h4>
-                            Dataset Organization
+                            Dataset Structure
                             <ul>
                                 <li><b>Rendered Image</b>: with background (<font color="red">384x384</font>), without
                                     background RGBA (<font color="red">512x512</font>).
                                 <li><b>Annotation</b>: 2D/3D positions for 21 keypoints of the hand, MANO pose, vertex
                                     locations.
+                                <li><b>Visualization & Code</b>: Please check <a>https://github.com/DART2022/DARTset</a></li>
                             </ul>
                             <p><code class="language-plaintext highlighter-rouge">DARTset</code> is composed of
                                 <b>train</b> and <b>test</b>. The folder of each is described as
@@ -330,6 +331,38 @@ Total set
                                 renders are roughly equal.
                             </p>
                         </h4>
+
+                        <h4>
+                            Dataset Creation
+
+                            <p class="text-justify">Texture map (4096 x 4096) are all created manually by 3D artists. GUI and batch data generator is programmed by DART's authors.</p>
+                            <ul>
+                                <li><b>(a) Pose Sampling</b>: In DART, we totally sampled 800K pose, 758K of them are valid. For each pose, we adopt synthetic pose <b>θs</b> from A-MANO and randomply picked 2,000 pose from FreiHand <b>θr</b>, through calculate the difference between <b>θs</b> and <b>θr</b>, we select the one <b>θr_max</b>
+                                that differs most from <b>θs</b>. Then we interpolate 8 rotations from <b>θr_max</b> to <b>θs</b> by spherical linear interpolation (Slerp). For more detail, please check the paper.
+                                <li><b>(b) Mesh Reconstruction & Rendering</b>: After part (a), we have <font color="blue">N x (16,3)</font> MANO poses (N=758K). We input those poses into our revised MANO layer directly. Through which we can easily get DART mesh (MANO mesh plus extra wrist) with 842 vertices and 1,666 faces.
+                                <li><b>(c) Rendering</b>: We adopt <font color="blue">Unity</font> and our revised <font color="red">SSS skin shader</font> for rendering. During the rendering pipeline, we randomly select the illumination (intensity, color and position), texture (including accessory). After rendering, we have the final image and 2D reprojected landmarks.</li>
+                                <li><b>(d) Ground Truth Data</b>: At part (a) and (b), we already gather all 3D related ground truth for monocular 3D pose estimation & hand tracking yet leave 2D landmark untouched. After the rendering process (part (c)), we obtain the 2D landmark and inject it to the ground truth data file.
+                                Since our method in creating DARTset is build on top of the ground truth annotations, so the ground truth annotations are born with renderings.</li>
+                            </ul>
+                        </h4>
+
+                        <h4>
+                            Considerations for Using the Data
+                            <ul>
+                                <li><b>Social Impact</b>: No ethical issues because DART do not involve any human biological information.</li>
+                                <li><b>Gender Biases</b>: Since our basic mesh topology is FIXED (we focus more on pose rather than shape), which means the mesh itself is gender-agnostic. In our data generation pipeline, both texture maps and accessories in DARTset are randomly sampled.
+                                Considering this, we do not think it may involve extreme gender bias in DARTset.</li>
+                            </ul>
+                        </h4>
+
+                         <h4>
+                            Additional Information
+                            <ul>
+                                <li><b>Dataset Curator</b>: <a>Daiheng Gao, daiheng.gdh@alibaba-inc.com</a></li>
+                                <li><b>Licensing Information</b>: Codes are MIT license. GUI(Unity) tools are CC BY-NC 4.0 license. Dataset is CC BY-NC-ND 4.0 license.</li>
+                            </ul>
+                        </h4>
+
                         <h4>
                             Download: <a
                                 href="https://www.dropbox.com/sh/vugu0230u7767mw/AAA_D0qFZBN4F2wWyTRZyyDXa?dl=0"
@@ -405,16 +438,6 @@ Total set
                 <!--            </div>-->
                 <!--        </div>-->
 
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3>
-                            License
-                        </h3>
-                        <p class="text-justify">
-                            Codes are MIT license. GUI(Unity) tools are CC BY-NC 4.0 license. Dataset is CC BY-NC-ND 4.0
-                            license.
-                    </div>
-                </div>
 
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
